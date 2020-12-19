@@ -4,18 +4,18 @@ import (
 	"fmt"
 )
 
-//go:generate stringer -type nodeType
-type nodeType int
+//go:generate stringer -type nodeKind
+type nodeKind int
 
 const (
-	number nodeType = iota
+	number nodeKind = iota
 	str
 	ident
 	binop
 )
 
 type node struct {
-	kind   nodeType
+	kind   nodeKind
 	int           // number
 	string        // ident, str
 	op     string // binary operator
